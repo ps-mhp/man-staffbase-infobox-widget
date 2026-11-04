@@ -14,15 +14,77 @@
 import { UiSchema } from "@rjsf/utils";
 import { JSONSchema7 } from "json-schema";
 
+export const VARIANT_ATTRIBUTE = "variant";
+export const HEADING_ATTRIBUTE = "heading";
+export const TEXT_ATTRIBUTE = "text";
+export const DISMISSIBLE_ATTRIBUTE = "dismissible";
+
 /**
- * Schema for the widget's configuration dialog.
+ * Das Schema des Konfigurationsdialogs.
+ *
+ * Die Auswahl steht als `oneOf` mit `const` und `title` — das Muster von
+ * Formular-, Datei- und Hotspot-Widget. `enumNames` ist in RJSF abgekuendigt
+ * und wird vom Dialog der Wirtsseite nicht zuverlaessig uebernommen.
+ *
  * @see https://rjsf-team.github.io/react-jsonschema-form/docs/
  */
 export const configurationSchema: JSONSchema7 = {
-  properties: {},
+  properties: {
+    [VARIANT_ATTRIBUTE]: {
+      type: "string",
+      title: "Variante",
+      default: "default",
+      oneOf: [
+        { const: "default", title: "Neutral" },
+        { const: "info", title: "Information" },
+        { const: "success", title: "Erfolg" },
+        { const: "warning", title: "Warnung" },
+        { const: "error", title: "Fehler" },
+      ],
+    },
+    [HEADING_ATTRIBUTE]: {
+      type: "string",
+      title: "Überschrift",
+    },
+    [TEXT_ATTRIBUTE]: {
+      type: "string",
+      title: "Text",
+    },
+    [DISMISSIBLE_ATTRIBUTE]: {
+      type: "boolean",
+      title: "Schließen erlauben",
+      default: true,
+    },
+  },
 };
 
 /**
  * @see https://rjsf-team.github.io/react-jsonschema-form/docs/api-reference/uiSchema
  */
-export const uiSchema: UiSchema = {};
+export const uiSchema: UiSchema = {
+  [VARIANT_ATTRIBUTE]: {
+    "ui:help": "Die Farbe des Kastens. Sie sagt dem Leser, wie dringend die Sache ist.",
+  },
+  [HEADING_ATTRIBUTE]: {
+    "ui:help": "Die fette erste Zeile. Darf leer bleiben — dann steht nur der Text im Kasten.",
+  },
+  [TEXT_ATTRIBUTE]: {
+    "ui:widget": "textarea",
+    "ui:help": "Der Text unter der Überschrift. Zeilenumbrüche bleiben erhalten.",
+  },
+  [DISMISSIBLE_ATTRIBUTE]: {
+    "ui:help":
+      "Das Kreuz rechts oben. Der Kasten bleibt nur bis zum nächsten Seitenaufruf weg. " +
+      "Für eine Pflichtmitteilung hier abschalten.",
+  },
+};
+
+/**
+ * Das Kreuz steht, solange es niemand ausdruecklich abschaltet. Staffbase
+ * liefert Wahrheitswerte je nach Weg als `boolean` oder als Zeichenkette;
+ * nur ein echtes „aus" zaehlt, damit ein fehlendes Attribut die Vorgabe
+ * nicht kippt.
+ */
+export function readDismissible(raw: unknown): boolean {
+  return !(raw === false || raw === "false");
+}
