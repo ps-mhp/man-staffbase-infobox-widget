@@ -67,6 +67,29 @@ describe("Infobox", () => {
     expect(container.querySelector(".man-infobox__text")!.textContent).toBe("Erste Zeile\nZweite Zeile");
   });
 
+  it("zeigt den Kasten nach dem Schliessen wieder, wenn sich eine Eingabe aendert", () => {
+    const { container, rerender } = render(
+      <Infobox variant="info" heading="Achtung" text="Alter Text" dismissible />,
+    );
+    fireEvent.click(screen.getByRole("button", { name: "Hinweis schließen" }));
+    expect(container.querySelector(".man-infobox")).toBeNull();
+
+    rerender(<Infobox variant="info" heading="Achtung" text="Neuer Text" dismissible />);
+    expect(container.querySelector(".man-infobox")).not.toBeNull();
+    expect(screen.getByText("Neuer Text")).toBeTruthy();
+  });
+
+  it("bleibt nach dem Schliessen verschwunden, wenn sich keine Eingabe aendert", () => {
+    const { container, rerender } = render(
+      <Infobox variant="info" heading="Achtung" text="Text" dismissible />,
+    );
+    fireEvent.click(screen.getByRole("button", { name: "Hinweis schließen" }));
+    expect(container.querySelector(".man-infobox")).toBeNull();
+
+    rerender(<Infobox variant="info" heading="Achtung" text="Text" dismissible />);
+    expect(container.querySelector(".man-infobox")).toBeNull();
+  });
+
   it("bringt sein Stylesheet selbst mit", () => {
     const { container } = render(<Infobox variant="info" heading="Achtung" dismissible />);
     const style = container.querySelector("style");

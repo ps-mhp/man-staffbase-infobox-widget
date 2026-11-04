@@ -15,7 +15,7 @@
         "variant": "info",
         "heading": "Neue Essensausgabe",
         "text": "Die Kantine zieht ab dem 1. Dezember in Halle 4.",
-        "dismissible": true
+        "dismissible": "true"
       }
     },
     {
@@ -24,7 +24,7 @@
         "variant": "warning",
         "heading": "Wartungsarbeiten am Wochenende",
         "text": "Das Intranet ist am Samstag von 8 bis 14 Uhr nicht erreichbar.",
-        "dismissible": false
+        "dismissible": "false"
       }
     }
   ]

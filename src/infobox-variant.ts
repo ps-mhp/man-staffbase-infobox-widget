@@ -11,6 +11,14 @@
  * limitations under the License.
  */
 /**
+ * Der Elementname, unter dem `index.tsx` den Baustein anmeldet. Liegt hier
+ * und nicht in `index.tsx` selbst, weil sowohl `index.tsx` als auch
+ * `infobox.tsx` diese Datei bereits einbinden — ein eigener Ort dafuer
+ * wuerde nur einen zusaetzlichen Importpfad ohne Nutzen schaffen.
+ */
+export const INFOBOX_WIDGET_TAG = "infobox-widget";
+
+/**
  * Die Variante steht als Zeichenkette im Attribut `variant`. Diese Datei ist
  * der einzige Ort, an dem aus dieser Zeichenkette eine gueltige Variante
  * wird — die Darstellung bekommt nur noch einen der fuenf bekannten Namen
@@ -20,6 +28,14 @@
  * Stylesheet; `infobox-variant.test.ts` und `styles.test.ts` wachen darueber.
  */
 export const INFOBOX_VARIANTS = ["default", "info", "success", "warning", "error"] as const;
+
+/** Merkt sich je unbekanntem Wert, ob schon gewarnt wurde — nur einmal pro Wert. */
+const warnedValues = new Set<string>();
+
+/** Nur fuer Tests: setzt den Merkspeicher bereits gemeldeter Werte zurueck. */
+export function resetVariantWarnings(): void {
+  warnedValues.clear();
+}
 
 export type InfoboxVariant = (typeof INFOBOX_VARIANTS)[number];
 
@@ -43,9 +59,13 @@ export function resolveVariant(raw: unknown): InfoboxVariant {
     }
   }
 
-  console.warn(
-    `infobox-widget: Unbekannte Variante „${String(raw)}". ` +
-      `Erlaubt sind ${INFOBOX_VARIANTS.join(", ")}. Es gilt „default".`,
-  );
+  const key = String(raw);
+  if (!warnedValues.has(key)) {
+    warnedValues.add(key);
+    console.warn(
+      `${INFOBOX_WIDGET_TAG}: Unbekannte Variante „${key}". ` +
+        `Erlaubt sind ${INFOBOX_VARIANTS.join(", ")}. Es gilt „default".`,
+    );
+  }
   return "default";
 }

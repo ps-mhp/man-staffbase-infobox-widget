@@ -11,13 +11,15 @@
  * limitations under the License.
  */
 
-import { INFOBOX_VARIANTS, resolveVariant } from "./infobox-variant";
+import { INFOBOX_VARIANTS, resetVariantWarnings, resolveVariant } from "./infobox-variant";
 
 describe("resolveVariant", () => {
   let warn: jest.SpyInstance;
 
   beforeEach(() => {
     warn = jest.spyOn(console, "warn").mockImplementation(() => undefined);
+    // Der Merkspeicher ist modulweit und wirkt sonst ueber Testfaelle hinweg.
+    resetVariantWarnings();
   });
 
   afterEach(() => {
@@ -58,6 +60,12 @@ describe("resolveVariant", () => {
 
   it("behandelt einen Wert, der keine Zeichenkette ist, als unbekannt", () => {
     expect(resolveVariant(42)).toBe("default");
+    expect(warn).toHaveBeenCalledTimes(1);
+  });
+
+  it("warnt bei demselben unbekannten Wert kein zweites Mal", () => {
+    expect(resolveVariant("danger")).toBe("default");
+    expect(resolveVariant("danger")).toBe("default");
     expect(warn).toHaveBeenCalledTimes(1);
   });
 });

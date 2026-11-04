@@ -29,7 +29,7 @@ Beitrag.
 ## Das Schließen-Kreuz
 
 Steht **Schließen erlauben** an, sieht der Leser rechts oben ein Kreuz. Ein
-Klick darauf nimmt den Kasten weg — bis zur nächsten Seitenaufruf. Danach
+Klick darauf nimmt den Kasten weg — bis zum nächsten Seitenaufruf. Danach
 steht er wieder da.
 
 Für eine Pflichtmitteilung, die jeder sehen muss, die Einstellung abwählen.

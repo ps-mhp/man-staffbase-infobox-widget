@@ -14,7 +14,7 @@
 import React from "react";
 
 import { useHotStyle } from "@shared/hot-style";
-import { InfoboxVariant } from "./infobox-variant";
+import { INFOBOX_WIDGET_TAG, InfoboxVariant } from "./infobox-variant";
 import infoboxCss from "./styles/infobox.scss";
 
 export interface InfoboxProps {
@@ -51,8 +51,20 @@ const CloseIcon = (): React.ReactElement => (
  * einen stabilen Schluessel je Kasten, den es hier nicht gibt.
  */
 export function Infobox({ variant, heading, text, dismissible }: InfoboxProps): React.ReactElement | null {
-  const liveCss = useHotStyle(infoboxCss, "infobox-widget", "styles/infobox.scss");
+  const liveCss = useHotStyle(infoboxCss, INFOBOX_WIDGET_TAG, "styles/infobox.scss");
   const [closed, setClosed] = React.useState(false);
+
+  // Eingaben, bei deren Aenderung ein geschlossener Kasten wieder erscheinen
+  // soll. Der Vergleich laeuft waehrend des Renderns (das von React dafuer
+  // vorgesehene Muster „Zustand beim Rendern anpassen"), nicht in einem
+  // `useEffect`: ein Effekt braeuchte einen zusaetzlichen Durchlauf und
+  // liesse den Kasten kurz sichtbar aufblitzen, bevor er wieder verschwindet.
+  const inputs: readonly [InfoboxVariant, string | undefined, string | undefined] = [variant, heading, text];
+  const [prevInputs, setPrevInputs] = React.useState(inputs);
+  if (prevInputs.some((value, index) => value !== inputs[index])) {
+    setPrevInputs(inputs);
+    setClosed(false);
+  }
 
   const title = heading?.trim() ?? "";
   const message = text?.trim() ?? "";

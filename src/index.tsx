@@ -14,7 +14,7 @@
 import { setPublicPathFromBundle } from "@shared/public-path";
 // Muss vor jedem dynamischen `import()` laufen, damit nachgeladene Teile von
 // dem CDN kommen, von dem das Bundle stammt, und nicht von der Wirtsseite.
-setPublicPathFromBundle("infobox-widget.js");
+setPublicPathFromBundle(`${INFOBOX_WIDGET_TAG}.js`);
 
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -30,7 +30,7 @@ import {
   readDismissible,
   uiSchema,
 } from "./configuration-schema";
-import { resolveVariant } from "./infobox-variant";
+import { INFOBOX_WIDGET_TAG, resolveVariant } from "./infobox-variant";
 import { Infobox } from "./infobox";
 import icon from "../resources/infobox-widget.svg";
 import pkg from "../package.json";
@@ -85,7 +85,7 @@ const factory: BlockFactory = (BaseBlockClass, _widgetApi) => {
 };
 
 const blockDefinition: BlockDefinition = {
-  name: "infobox-widget",
+  name: INFOBOX_WIDGET_TAG,
   factory: factory,
   attributes: widgetAttributes,
   blockLevel: "block",
@@ -115,7 +115,7 @@ const externalBlockDefinition: ExternalBlockDefinition = {
  */
 if (typeof window.defineBlock === "function") {
   void startWidget({
-    name: "infobox-widget",
+    name: INFOBOX_WIDGET_TAG,
     version: pkg.version,
     register: () => {
       window.defineBlock(externalBlockDefinition);
