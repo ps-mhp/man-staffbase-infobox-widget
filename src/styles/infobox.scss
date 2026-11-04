@@ -1,0 +1,139 @@
+/*!
+ * Copyright 2026, MHP Management und IT-Beratung GmbH and contributors.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use "sass:map";
+@use "@shared/stylings/man-tokens" as *;
+@use "@shared/stylings/man-craft" as *;
+
+/* Eine flache Farbflaeche ohne Rand, ohne Schatten, ohne Rundung — dieselbe
+ * Form wie der Versionshinweis im Dokumentations-Widget
+ * (`docs-app__version-warning`). Die Farbe ist die ganze Aussage; eine Kante
+ * daneben waere nur Unruhe. */
+
+/* Die Farbpaare je Variante. `styles.test.ts` prueft, dass hier genau die
+ * fuenf Namen aus `infobox-variant.ts` stehen und jede ihr Paar traegt. */
+$variants: (
+  "default": ("surface": "grey-300", "ink": "text"),
+  "info": ("surface": "info", "ink": "info-ink"),
+  "success": ("surface": "success", "ink": "success-ink"),
+  "warning": ("surface": "warning", "ink": "warning-ink"),
+  "error": ("surface": "error-surface", "ink": "error-ink"),
+);
+
+.man-infobox {
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-start;
+  gap: man("space-3");
+  padding: man("space-4");
+  border-radius: man("radius");
+  @include man-type("body-s");
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+}
+
+@each $name, $colors in $variants {
+  .man-infobox--#{$name} {
+    background: man(map.get($colors, "surface"));
+    color: man(map.get($colors, "ink"));
+  }
+}
+
+/* `min-width: 0` laesst lange Woerter umbrechen statt den Kasten zu sprengen. */
+.man-infobox__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Ueberschrift und Text sind `p`: das Widget kennt die Gliederung der Seite
+ * nicht, in die es gesetzt wird, und darf sie mit einer `h`-Ebene nicht
+ * stoeren. Wirtsthemen setzen fuer `p` eigene Typografie mit `!important`
+ * durch (siehe content-tabs/src/styles.ts) — dagegen hilft nur dasselbe
+ * Mittel. */
+.man-infobox__heading {
+  margin: 0;
+  color: inherit !important;
+  overflow-wrap: anywhere;
+  @include man-type("body-s", $important: true);
+
+  /* Nach `man-type`, sonst ueberschriebe dessen Gewicht die fette Zeile. */
+  font-weight: 600 !important;
+}
+
+/* `pre-line`: die Zeilenumbrueche aus dem Textfeld bleiben stehen, mehrfache
+ * Leerzeichen fallen zusammen. */
+.man-infobox__text {
+  margin: man("space-1") 0 0;
+  color: inherit !important;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  @include man-type("body-s", $important: true);
+}
+
+/* Die Ueberschrift allein steht ohne Abstand darunter. */
+.man-infobox__body > .man-infobox__text:first-child {
+  margin-top: 0;
+}
+
+/* Jeder blanke `button` im Inhaltsbereich bekommt von man-theme den Grundriss
+ * eines Handlungsknopfs ueber die volle Breite. Dieser hier ist ein Kreuz,
+ * keine Handlung — also gegen die Wirtsseite durchgesetzt. */
+.man-infobox__close {
+  @include man-outshine-host {
+    display: flex !important;
+    box-sizing: border-box !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: man("radius") !important;
+    background: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+    font: inherit !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    cursor: pointer;
+    transition: opacity man("duration") man("ease");
+
+    &:focus-visible {
+      @include man-focus-ring($important: true);
+    }
+  }
+}
+
+/* Das Kreuz folgt der Schrift der Variante ueber `stroke="currentColor"`. */
+.man-infobox__close-icon {
+  display: block;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* Nur fuer Zeigegeraete mit echtem Hover: sonst bliebe das Kreuz nach einem
+ * Tipp blass stehen. */
+@media (hover: hover) {
+  .man-infobox__close:hover {
+    opacity: 0.7;
+  }
+}
