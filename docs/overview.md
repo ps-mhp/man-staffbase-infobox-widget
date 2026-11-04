@@ -1,13 +1,27 @@
-# infobox-widget
+# Übersicht
 
-TODO: Beschreibe in 2-3 Absätzen, wofür Redakteur:innen dieses Widget
-einsetzen und welches Ergebnis es auf der Seite erzeugt.
+Die Infobox ist ein farbig hinterlegter Kasten für einen kurzen Hinweis: eine
+fette Zeile, darunter ein Satz. Die Farbe der Fläche sagt dem Leser, wie
+dringend die Sache ist.
 
-## Was Leser:innen sehen
+## Die fünf Varianten
 
-TODO: Was erscheint auf der veröffentlichten Seite?
+| Variante | Farbe | Wofür |
+| --- | --- | --- |
+| Neutral | Grau | Ein Hinweis ohne Dringlichkeit — eine Ergänzung, eine Fußnote. |
+| Information | Blau | Eine Neuigkeit, die der Leser kennen sollte. |
+| Erfolg | Grün | Etwas ist abgeschlossen oder freigegeben. |
+| Warnung | Gelb | Etwas steht an, das den Leser betrifft. |
+| Fehler | Rot | Etwas ist ausgefallen oder gilt nicht mehr. |
 
-## Was Sie im CMS-Editor sehen
+Mehr als eine Variante pro Seite verwässert die Aussage. Wenn alles gelb ist,
+ist nichts dringend.
 
-TODO: Weicht die Bearbeitungsansicht davon ab? Wo muss zum Prüfen die Vorschau
-benutzt werden?
+## Was die Infobox nicht ist
+
+Sie ersetzt keine Nachricht und keinen Beitrag. Sie trägt einen Satz, nicht
+einen Absatz. Wer mehr zu sagen hat, schreibt einen Beitrag und verlinkt ihn
+im Fließtext darüber.
+
+Sie ist auch kein Dialog: das Schließen-Kreuz nimmt den Kasten nur bis zum
+nächsten Seitenaufruf weg.

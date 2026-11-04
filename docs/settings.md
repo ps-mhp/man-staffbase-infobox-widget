@@ -1,12 +1,11 @@
 # Einstellungen
 
-TODO: Liste jede Einstellung im Konfigurationsdialog auf, mit dem exakten
-Namen aus dem Dialog, was sie bewirkt, welcher Wert voreingestellt ist und —
-falls relevant — welche Werte erlaubt sind.
+| Feld | Vorgabe | Bedeutung |
+| --- | --- | --- |
+| **Variante** | Neutral | Die Farbe des Kastens: Neutral, Information, Erfolg, Warnung, Fehler. |
+| **Überschrift** | leer | Die fette erste Zeile. Darf leer bleiben. |
+| **Text** | leer | Der Text darunter. Zeilenumbrüche bleiben erhalten. Darf leer bleiben. |
+| **Schließen erlauben** | an | Zeigt das Kreuz rechts oben. |
 
-| Einstellung | Beschreibung |
-| --- | --- |
-| _(Name)_ | _(Beschreibung)_ |
-
-TODO: Falls Einstellungen voneinander abhängen (z. B. Feld wirkt nur in einem
-bestimmten Modus), das hier ausdrücklich sagen.
+Überschrift und Text dürfen nicht beide leer sein — sonst gibt das Widget
+nichts aus.

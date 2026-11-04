@@ -1,11 +1,31 @@
 {
-  "title": "infobox-widget",
-  "summary": "TODO: Ein Satz, was dieses Widget für Redakteure tut.",
-  "icon": "🧩",
+  "title": "Infobox",
+  "summary": "Ein farbig hinterlegter Hinweiskasten in fünf Varianten, wahlweise vom Leser wegklickbar.",
+  "icon": "📢",
   "pages": [
     { "id": "overview", "title": "Übersicht", "file": "overview.md" },
     { "id": "usage", "title": "Schritt für Schritt", "file": "usage.md" },
     { "id": "settings", "title": "Einstellungen", "file": "settings.md" },
     { "id": "faq", "title": "FAQ", "file": "faq.md" }
+  ],
+  "examples": [
+    {
+      "title": "Hinweis mit Überschrift und Text",
+      "attributes": {
+        "variant": "info",
+        "heading": "Neue Essensausgabe",
+        "text": "Die Kantine zieht ab dem 1. Dezember in Halle 4.",
+        "dismissible": true
+      }
+    },
+    {
+      "title": "Warnung ohne Schließen-Kreuz",
+      "attributes": {
+        "variant": "warning",
+        "heading": "Wartungsarbeiten am Wochenende",
+        "text": "Das Intranet ist am Samstag von 8 bis 14 Uhr nicht erreichbar.",
+        "dismissible": false
+      }
+    }
   ]
 }
