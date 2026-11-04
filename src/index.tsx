@@ -12,28 +12,66 @@
  */
 
 import { setPublicPathFromBundle } from "@shared/public-path";
-
-// Must run before any dynamic `import()`, so that lazily loaded chunks come
-// from the CDN the bundle was served from and not from the hosting page.
+// Muss vor jedem dynamischen `import()` laufen, damit nachgeladene Teile von
+// dem CDN kommen, von dem das Bundle stammt, und nicht von der Wirtsseite.
 setPublicPathFromBundle("infobox-widget.js");
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { BlockFactory, BlockDefinition, ExternalBlockDefinition, BaseBlock } from "widget-sdk";
-import { configurationSchema, uiSchema } from "./configuration-schema";
+import { startWidget } from "@shared/dev-mode/start-widget";
+import {
+  DISMISSIBLE_ATTRIBUTE,
+  HEADING_ATTRIBUTE,
+  TEXT_ATTRIBUTE,
+  VARIANT_ATTRIBUTE,
+  configurationSchema,
+  readDismissible,
+  uiSchema,
+} from "./configuration-schema";
+import { resolveVariant } from "./infobox-variant";
+import { Infobox } from "./infobox";
 import icon from "../resources/infobox-widget.svg";
 import pkg from "../package.json";
 
-/** Attributes handled by the widget; mirrored in the configuration schema. */
-const widgetAttributes: string[] = [];
+/** Die Attribute des Widgets; gespiegelt im Konfigurationsschema. */
+const widgetAttributes: string[] = [
+  VARIANT_ATTRIBUTE,
+  HEADING_ATTRIBUTE,
+  TEXT_ATTRIBUTE,
+  DISMISSIBLE_ATTRIBUTE,
+];
+
+/** Nur Zeichenketten reicht die Darstellung weiter; alles andere gilt als nicht gesetzt. */
+function text(value: unknown): string | undefined {
+  return typeof value === "string" ? value : undefined;
+}
 
 const factory: BlockFactory = (BaseBlockClass, _widgetApi) => {
+  /**
+   * <infobox-widget variant="info" heading="Achtung" text="Die Kantine bleibt zu."></infobox-widget>
+   */
   return class InfoboxWidgetBlock extends BaseBlockClass implements BaseBlock {
     private _root: ReactDOM.Root | null = null;
 
     public renderBlock(container: HTMLElement): void {
+      const attrs = this.parseAttributes<Record<string, unknown>>();
+
       this._root ??= ReactDOM.createRoot(container);
-      this._root.render(<div />);
+      this._root.render(
+        <Infobox
+          variant={resolveVariant(attrs[VARIANT_ATTRIBUTE])}
+          heading={text(attrs[HEADING_ATTRIBUTE])}
+          text={text(attrs[TEXT_ATTRIBUTE])}
+          dismissible={readDismissible(attrs[DISMISSIBLE_ATTRIBUTE])}
+        />,
+      );
+    }
+
+    public unmountBlock(_container: HTMLElement): void {
+      this._root?.unmount();
+      this._root = null;
     }
 
     public static get observedAttributes(): string[] {
@@ -53,7 +91,7 @@ const blockDefinition: BlockDefinition = {
   blockLevel: "block",
   configurationSchema: configurationSchema,
   uiSchema: uiSchema,
-  label: "InfoboxWidget",
+  label: "Infobox",
   iconUrl: icon,
 };
 
@@ -63,4 +101,24 @@ const externalBlockDefinition: ExternalBlockDefinition = {
   version: pkg.version,
 };
 
-window.defineBlock(externalBlockDefinition);
+/**
+ * Meldet den Baustein bei der Wirtsseite an.
+ *
+ * `startWidget` fragt zuerst, ob ein lokaler Entwicklungsserver dieses Widget
+ * ausliefert. In fast jedem Browser lautet die Antwort nein, und es wird
+ * sofort angemeldet; auf dem Rechner der Entwicklung uebernimmt das lokale
+ * Bundle und meldet an seiner Stelle an. Immer nur eines von beiden — ein
+ * Bausteinname laesst sich nicht zweimal belegen.
+ *
+ * Die Abfrage davor laesst das Modul in Jest laden, wo es keine Wirtsseite
+ * gibt: ohne sie braeche schon der blosse Import der Datei jeden Test.
+ */
+if (typeof window.defineBlock === "function") {
+  void startWidget({
+    name: "infobox-widget",
+    version: pkg.version,
+    register: () => {
+      window.defineBlock(externalBlockDefinition);
+    },
+  });
+}
