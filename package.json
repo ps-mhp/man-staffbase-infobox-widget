@@ -1,8 +1,8 @@
 {
   "name": "@man/infobox-widget",
-  "version": "0.0.0",
-  "description": "",
-  "author": "",
+  "version": "0.1.0-rc.1",
+  "description": "Ein farbig hinterlegter Hinweiskasten in fünf Varianten, wahlweise vom Leser wegklickbar.",
+  "author": "MHP Management und IT-Beratung GmbH",
   "license": "ISC",
   "staffbase": {
     "element": "infobox-widget",
