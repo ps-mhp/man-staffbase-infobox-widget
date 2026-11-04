@@ -1,0 +1,11 @@
+{
+  "name": "@man/infobox-widget",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "staffbase": {
+    "element": "infobox-widget",
+    "bundle": "dist/infobox-widget.js"
+  }
+}
