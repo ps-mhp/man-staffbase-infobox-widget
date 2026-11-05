@@ -1,0 +1,47 @@
+{
+  "title": "Ramka informacyjna",
+  "summary": "Pięć wariantów kolorowych ramek z informacjami, które czytelnik może w razie potrzeby zamknąć.",
+  "icon": "📢",
+  "pages": [
+    {
+      "id": "overview",
+      "title": "Przegląd",
+      "file": "overview.md"
+    },
+    {
+      "id": "usage",
+      "title": "Krok po kroku",
+      "file": "usage.md"
+    },
+    {
+      "id": "settings",
+      "title": "Ustawienia",
+      "file": "settings.md"
+    },
+    {
+      "id": "faq",
+      "title": "Najczęściej zadawane pytania",
+      "file": "faq.md"
+    }
+  ],
+  "examples": [
+    {
+      "title": "Informacja z nagłówkiem i tekstem",
+      "attributes": {
+        "variant": "info",
+        "heading": "Neue Essensausgabe",
+        "text": "Die Kantine zieht ab dem 1. Dezember in Halle 4.",
+        "dismissible": "true"
+      }
+    },
+    {
+      "title": "Ostrzeżenie bez ikony zamknięcia",
+      "attributes": {
+        "variant": "warning",
+        "heading": "Wartungsarbeiten am Wochenende",
+        "text": "Das Intranet ist am Samstag von 8 bis 14 Uhr nicht erreichbar.",
+        "dismissible": "false"
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Infobox",
+  "summary": "A tooltip with a colored background, available in five variations, which the reader can choose to close.",
+  "icon": "📢",
+  "pages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "file": "overview.md"
+    },
+    {
+      "id": "usage",
+      "title": "Step by step",
+      "file": "usage.md"
+    },
+    {
+      "id": "settings",
+      "title": "Settings",
+      "file": "settings.md"
+    },
+    {
+      "id": "faq",
+      "title": "FAQ",
+      "file": "faq.md"
+    }
+  ],
+  "examples": [
+    {
+      "title": "Note with heading and text",
+      "attributes": {
+        "variant": "info",
+        "heading": "Neue Essensausgabe",
+        "text": "Die Kantine zieht ab dem 1. Dezember in Halle 4.",
+        "dismissible": "true"
+      }
+    },
+    {
+      "title": "Warning without a close icon",
+      "attributes": {
+        "variant": "warning",
+        "heading": "Wartungsarbeiten am Wochenende",
+        "text": "Das Intranet ist am Samstag von 8 bis 14 Uhr nicht erreichbar.",
+        "dismissible": "false"
+      }
+    }
+  ]
+}

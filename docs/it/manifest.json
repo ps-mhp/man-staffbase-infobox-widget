@@ -1,0 +1,47 @@
+{
+  "title": "Riquadro informativo",
+  "summary": "Un riquadro informativo con sfondo colorato, disponibile in cinque varianti, che il lettore può chiudere a scelta.",
+  "icon": "📢",
+  "pages": [
+    {
+      "id": "overview",
+      "title": "Panoramica",
+      "file": "overview.md"
+    },
+    {
+      "id": "usage",
+      "title": "Passo dopo passo",
+      "file": "usage.md"
+    },
+    {
+      "id": "settings",
+      "title": "Impostazioni",
+      "file": "settings.md"
+    },
+    {
+      "id": "faq",
+      "title": "Domande frequenti",
+      "file": "faq.md"
+    }
+  ],
+  "examples": [
+    {
+      "title": "Nota con titolo e testo",
+      "attributes": {
+        "variant": "info",
+        "heading": "Neue Essensausgabe",
+        "text": "Die Kantine zieht ab dem 1. Dezember in Halle 4.",
+        "dismissible": "true"
+      }
+    },
+    {
+      "title": "Avviso senza croce di chiusura",
+      "attributes": {
+        "variant": "warning",
+        "heading": "Wartungsarbeiten am Wochenende",
+        "text": "Das Intranet ist am Samstag von 8 bis 14 Uhr nicht erreichbar.",
+        "dismissible": "false"
+      }
+    }
+  ]
+}

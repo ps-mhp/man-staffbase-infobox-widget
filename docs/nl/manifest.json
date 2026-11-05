@@ -1,0 +1,47 @@
+{
+  "title": "Infobox",
+  "summary": "Een informatievak met gekleurde achtergrond in vijf varianten, dat desgewenst door de lezer kan worden weggeklikt.",
+  "icon": "📢",
+  "pages": [
+    {
+      "id": "overview",
+      "title": "Overzicht",
+      "file": "overview.md"
+    },
+    {
+      "id": "usage",
+      "title": "Stap voor stap",
+      "file": "usage.md"
+    },
+    {
+      "id": "settings",
+      "title": "Instellingen",
+      "file": "settings.md"
+    },
+    {
+      "id": "faq",
+      "title": "Veelgestelde vragen",
+      "file": "faq.md"
+    }
+  ],
+  "examples": [
+    {
+      "title": "Opmerking met kop en tekst",
+      "attributes": {
+        "variant": "info",
+        "heading": "Neue Essensausgabe",
+        "text": "Die Kantine zieht ab dem 1. Dezember in Halle 4.",
+        "dismissible": "true"
+      }
+    },
+    {
+      "title": "Waarschuwing zonder sluitkruisje",
+      "attributes": {
+        "variant": "warning",
+        "heading": "Wartungsarbeiten am Wochenende",
+        "text": "Das Intranet ist am Samstag von 8 bis 14 Uhr nicht erreichbar.",
+        "dismissible": "false"
+      }
+    }
+  ]
+}
