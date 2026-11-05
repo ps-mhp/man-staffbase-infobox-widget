@@ -4,12 +4,13 @@ Die Infobox ist ein farbig hinterlegter Kasten für einen kurzen Hinweis: eine
 fette Zeile, darunter ein Satz. Die Farbe der Fläche sagt dem Leser, wie
 dringend die Sache ist.
 
-## Die fünf Varianten
+## Die sechs Varianten
 
 | Variante | Farbe | Wofür |
 | --- | --- | --- |
 | Neutral | Grau | Ein Hinweis ohne Dringlichkeit — eine Ergänzung, eine Fußnote. |
 | Information | Blau | Eine Neuigkeit, die der Leser kennen sollte. |
+| Erläuterung | MAN-Hellblau | Ein ruhiger, erläuternder Hinweis — Hintergrundwissen und Einordnung, kein Status und keine Neuigkeit. |
 | Erfolg | Grün | Etwas ist abgeschlossen oder freigegeben. |
 | Warnung | Gelb | Etwas steht an, das den Leser betrifft. |
 | Fehler | Rot | Etwas ist ausgefallen oder gilt nicht mehr. |

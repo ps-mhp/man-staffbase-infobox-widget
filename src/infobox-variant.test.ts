@@ -26,8 +26,15 @@ describe("resolveVariant", () => {
     warn.mockRestore();
   });
 
-  it("fuehrt genau die fuenf Varianten des Schemas", () => {
-    expect([...INFOBOX_VARIANTS]).toEqual(["default", "info", "success", "warning", "error"]);
+  it("fuehrt genau die sechs Varianten des Schemas", () => {
+    expect([...INFOBOX_VARIANTS]).toEqual([
+      "default",
+      "info",
+      "explanation",
+      "success",
+      "warning",
+      "error",
+    ]);
   });
 
   it("gibt jede bekannte Variante unveraendert zurueck", () => {

@@ -25,6 +25,7 @@ import { INFOBOX_VARIANTS } from "./infobox-variant";
 const EXPECTED: Record<string, { surface: string; ink: string }> = {
   default: { surface: "grey-300", ink: "text" },
   info: { surface: "info", ink: "info-ink" },
+  explanation: { surface: "explanation", ink: "explanation-ink" },
   success: { surface: "success", ink: "success-ink" },
   warning: { surface: "warning", ink: "warning-ink" },
   error: { surface: "error-surface", ink: "error-ink" },

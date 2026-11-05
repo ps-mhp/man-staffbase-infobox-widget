@@ -21,13 +21,20 @@ export const INFOBOX_WIDGET_TAG = "infobox-widget";
 /**
  * Die Variante steht als Zeichenkette im Attribut `variant`. Diese Datei ist
  * der einzige Ort, an dem aus dieser Zeichenkette eine gueltige Variante
- * wird — die Darstellung bekommt nur noch einen der fuenf bekannten Namen
+ * wird — die Darstellung bekommt nur noch einen der sechs bekannten Namen
  * und muss nicht mehr pruefen.
  *
  * Die Reihenfolge ist dieselbe wie im Konfigurationsdialog und im
  * Stylesheet; `infobox-variant.test.ts` und `styles.test.ts` wachen darueber.
  */
-export const INFOBOX_VARIANTS = ["default", "info", "success", "warning", "error"] as const;
+export const INFOBOX_VARIANTS = [
+  "default",
+  "info",
+  "explanation",
+  "success",
+  "warning",
+  "error",
+] as const;
 
 /** Merkt sich je unbekanntem Wert, ob schon gewarnt wurde — nur einmal pro Wert. */
 const warnedValues = new Set<string>();

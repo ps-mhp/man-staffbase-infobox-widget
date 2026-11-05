@@ -1,8 +1,8 @@
 # Infobox-Widget
 
 Ein farbig hinterlegter Hinweiskasten für Staffbase: eine fette Zeile, darunter
-ein kurzer Text. Fünf Varianten — Neutral, Information, Erfolg, Warnung,
-Fehler. Wahlweise vom Leser wegklickbar.
+ein kurzer Text. Sechs Varianten — Neutral, Information, Erläuterung, Erfolg,
+Warnung, Fehler. Wahlweise vom Leser wegklickbar.
 
 ```html
 <infobox-widget
@@ -17,7 +17,7 @@ Fehler. Wahlweise vom Leser wegklickbar.
 
 | Attribut | Typ | Vorgabe | Bedeutung |
 | --- | --- | --- | --- |
-| `variant` | `default` \| `info` \| `success` \| `warning` \| `error` | `default` | Die Farbe des Kastens |
+| `variant` | `default` \| `info` \| `explanation` \| `success` \| `warning` \| `error` | `default` | Die Farbe des Kastens |
 | `heading` | Zeichenkette | leer | Die fette erste Zeile |
 | `text` | Zeichenkette | leer | Der Text darunter, Zeilenumbrüche bleiben erhalten |
 | `dismissible` | Wahrheitswert | `true` | Zeigt das Schließen-Kreuz |

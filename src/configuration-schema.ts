@@ -37,6 +37,7 @@ export const configurationSchema: JSONSchema7 = {
       oneOf: [
         { const: "default", title: "Neutral" },
         { const: "info", title: "Information" },
+        { const: "explanation", title: "Erläuterung" },
         { const: "success", title: "Erfolg" },
         { const: "warning", title: "Warnung" },
         { const: "error", title: "Fehler" },

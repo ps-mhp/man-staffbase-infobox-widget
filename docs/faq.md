@@ -33,5 +33,7 @@ lassen sie sich auch unabhängig voneinander verschieben und löschen.
 
 ## Kann ich die Farben ändern?
 
-Nein. Die fünf Varianten sind die Statusfarben des MAN-Designs. Eine eigene
-Farbe würde die Aussage der anderen vier entwerten.
+Nein. Fünf der sechs Varianten sind die Statusfarben des MAN-Designs; die
+sechste, Erläuterung, ist stattdessen eine Flächenfarbe aus dem
+MAN-Corporate-Design für ruhige Hintergrundhinweise ohne Statuscharakter. Eine
+eigene Farbe würde die Aussage der anderen entwerten.

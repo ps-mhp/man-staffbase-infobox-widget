@@ -43,7 +43,7 @@ describe("configurationSchema", () => {
   it("gibt jeder Variante einen Klartextnamen", () => {
     const variant = (configurationSchema.properties ?? {})[VARIANT_ATTRIBUTE] as JSONSchema7;
     const titles = (variant.oneOf ?? []).map((entry: JSONSchema7Definition) => (entry as JSONSchema7).title);
-    expect(titles).toEqual(["Neutral", "Information", "Erfolg", "Warnung", "Fehler"]);
+    expect(titles).toEqual(["Neutral", "Information", "Erläuterung", "Erfolg", "Warnung", "Fehler"]);
   });
 
   it("steht neutral und schliessbar in der Vorgabe", () => {

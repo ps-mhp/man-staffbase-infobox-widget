@@ -21,10 +21,11 @@
  * daneben waere nur Unruhe. */
 
 /* Die Farbpaare je Variante. `styles.test.ts` prueft, dass hier genau die
- * fuenf Namen aus `infobox-variant.ts` stehen und jede ihr Paar traegt. */
+ * sechs Namen aus `infobox-variant.ts` stehen und jede ihr Paar traegt. */
 $variants: (
   "default": ("surface": "grey-300", "ink": "text"),
   "info": ("surface": "info", "ink": "info-ink"),
+  "explanation": ("surface": "explanation", "ink": "explanation-ink"),
   "success": ("surface": "success", "ink": "success-ink"),
   "warning": ("surface": "warning", "ink": "warning-ink"),
   "error": ("surface": "error-surface", "ink": "error-ink"),
