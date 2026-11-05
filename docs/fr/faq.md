@@ -33,5 +33,7 @@ permettra également de les déplacer et de les supprimer indépendamment l’un
 
 ## Puis-je modifier les couleurs ?
 
-Non. Les cinq variantes correspondent aux couleurs de statut du design MAN. Une couleur
-personnalisée affaiblirait le message véhiculé par les quatre autres.
+Non. Cinq des six variantes correspondent aux couleurs d’état du design MAN ; la
+sixième, « Explication », est quant à elle une couleur de fond issue de l’
+identité visuelle de MAN, destinée aux remarques d’arrière-plan neutres sans caractère d’état. Une
+couleur personnalisée affaiblirait le message des autres.

@@ -1,6 +1,6 @@
 {
   "title": "Infobox",
-  "summary": "Een informatievak met gekleurde achtergrond in vijf varianten, dat desgewenst door de lezer kan worden weggeklikt.",
+  "summary": "Een informatievak met gekleurde achtergrond in zes varianten, dat de lezer desgewenst kan wegklikken.",
   "icon": "📢",
   "pages": [
     {
@@ -31,6 +31,15 @@
         "variant": "info",
         "heading": "Neue Essensausgabe",
         "text": "Die Kantine zieht ab dem 1. Dezember in Halle 4.",
+        "dismissible": "true"
+      }
+    },
+    {
+      "title": "Toelichting als achtergrondinformatie",
+      "attributes": {
+        "variant": "explanation",
+        "heading": "Was ist eine Betriebsvereinbarung?",
+        "text": "Eine Betriebsvereinbarung regelt verbindlich das Verhältnis zwischen Arbeitgeber und Betriebsrat.",
         "dismissible": "true"
       }
     },

@@ -29,9 +29,11 @@ of onder het kader.
 ## Kan ik meerdere mededelingen in één widget stapelen?
 
 Nee, één infobox per widget. Voeg voor twee mededelingen twee widgets in — zo
-kun je ze ook onafhankelijk van elkaar verplaatsen en verwijderen.
+kunnen ze ook onafhankelijk van elkaar worden verplaatst en verwijderd.
 
 ## Kan ik de kleuren wijzigen?
 
-Nee. De vijf varianten zijn de statuskleuren van het MAN-ontwerp. Een eigen
-kleur zou de boodschap van de andere vier ondermijnen.
+Nee. Vijf van de zes varianten zijn de statuskleuren van het MAN-ontwerp; de
+zesde, ‘Toelichting’, is daarentegen een vlakvulkleur uit het
+MAN-huisstijlontwerp voor rustige achtergrondvermeldingen zonder statuskarakter. Een
+eigen kleur zou de boodschap van de andere vermeldingen ondermijnen.

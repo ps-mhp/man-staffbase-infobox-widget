@@ -3,7 +3,8 @@
 ## Tworzenie ramki informacyjnej
 
 1. W edytorze, w wybranym miejscu, wstaw **ramkę informacyjną** z listy widżetów.
-   2. Wybierz **wariant** — kolor ramki.
+  
+2. Wybierz **wariant** — kolor ramki.
 3. Wprowadź **nagłówek**: pogrubiony pierwszy wiersz.
 4. Wprowadź **tekst**: zdanie poniżej.
 5. Zaznacz lub odznacz opcję **Zezwól na zamknięcie**.

@@ -1,15 +1,16 @@
 # Resumen
 
 El cuadro informativo es un recuadro con fondo de color destinado a una breve nota: una
-línea en negrita, seguida de una frase. El color del recuadro indica al lector el grado de
-urgencia del asunto.
+línea en negrita, seguida de una frase. El color del recuadro indica al lector el
+grado de urgencia del asunto.
 
-## Las cinco variantes
+## Las seis variantes
 
 | Variante | Color | Para qué |
 | --- | --- | --- |
-| Neutral | Gris | Una nota sin carácter urgente: un apéndice, una nota al pie. |
+| Neutral | Gris | Una nota sin urgencia: un apunte adicional, una nota al pie. |
 | Información | Azul | Una noticia que el lector debería conocer. |
+| Explicación | Azul claro MAN | Una nota tranquila y explicativa: contexto y contextualización, sin indicar estado ni ser una noticia. |
 | Éxito | Verde | Algo se ha completado o se ha dado luz verde. |
 | Advertencia | Amarillo | Se avecina algo que afecta al lector. |
 | Error | Rojo | Algo ha fallado o ya no es válido. |
@@ -24,4 +25,4 @@ un párrafo. Quien tenga más que decir, que escriba una entrada y la enlace
 en el texto que la precede.
 
 Tampoco es un diálogo: la cruz de cierre solo elimina el recuadro hasta la
-próxima carga de la página.
+próxima visita a la página.

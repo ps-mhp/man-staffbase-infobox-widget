@@ -13,25 +13,27 @@ u wszystkich użytkowników. Dlatego przeglądarka niczego tutaj nie zapamiętuj
 ## Dlaczego opcja „Neutralny” jest szara, a nie biała?
 
 Biały kolor byłby nie do odróżnienia od tła strony, a ramka
-celowo nie ma obramowania. Powierzchnia jest jedyną rzeczą, która odróżnia ją od
+celowo nie ma obramowania. Jej powierzchnia jest jedyną rzeczą, która odróżnia ją od
 tekstu bieżącego.
 
-## Nie widzę mojej ramki informacyjnej.
+## Nie widzę mojego pola informacyjnego.
 
 Oznacza to, że zarówno nagłówek, jak i tekst są puste. Przynajmniej jedno z nich musi
 być wypełnione.
 
 ## Czy mogę umieścić link w tekście?
 
-Nie. Ramka informacyjna zawiera wyłącznie tekst. Link należy umieścić w tekście ciągłym powyżej
-lub poniżej ramki.
+Nie. Pole informacyjne zawiera wyłącznie tekst. Link należy umieścić w tekście ciągłym powyżej
+lub poniżej pola.
 
 ## Czy mogę umieścić kilka informacji w jednym widżecie?
 
-Nie, w każdym widżecie może znajdować się tylko jedna ramka informacyjna. Aby umieścić dwie informacje, należy wstawić dwa widżety — dzięki temu
+Nie, w każdym widżecie może znajdować się tylko jedna ramka informacyjna. Aby umieścić dwie informacje, należy wstawić dwa widżety — w ten sposób
 można je również niezależnie od siebie przesuwać i usuwać.
 
 ## Czy mogę zmienić kolory?
 
-Nie. Pięć wariantów to kolory statusowe zgodne z projektem MAN. Własny
-kolor osłabiłby przekaz pozostałych czterech.
+Nie. Pięć z sześciu wariantów to kolory statusowe zgodne z identyfikacją wizualną MAN;
+szósty, „Wyjaśnienie”, jest natomiast kolorem tła pochodzącym z
+identyfikacji wizualnej MAN, przeznaczonym do spokojnych informacji w tle, które nie mają charakteru statusowego.
+Własny kolor osłabiłby przekaz pozostałych elementów.

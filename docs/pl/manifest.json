@@ -1,6 +1,6 @@
 {
   "title": "Ramka informacyjna",
-  "summary": "Pięć wariantów kolorowych ramek z informacjami, które czytelnik może w razie potrzeby zamknąć.",
+  "summary": "Kolorowe okienko z informacją, dostępne w sześciu wariantach, z możliwością zamknięcia przez czytelnika jednym kliknięciem.",
   "icon": "📢",
   "pages": [
     {
@@ -31,6 +31,15 @@
         "variant": "info",
         "heading": "Neue Essensausgabe",
         "text": "Die Kantine zieht ab dem 1. Dezember in Halle 4.",
+        "dismissible": "true"
+      }
+    },
+    {
+      "title": "Objaśnienie jako wiedza ogólna",
+      "attributes": {
+        "variant": "explanation",
+        "heading": "Was ist eine Betriebsvereinbarung?",
+        "text": "Eine Betriebsvereinbarung regelt verbindlich das Verhältnis zwischen Arbeitgeber und Betriebsrat.",
         "dismissible": "true"
       }
     },

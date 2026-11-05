@@ -23,7 +23,7 @@ estar preenchido.
 
 ## Posso inserir um link no texto?
 
-Não. A caixa de informação contém apenas texto. Um link deve ser colocado no corpo do texto, acima
+Não. A caixa de informação contém apenas texto. Um link deve ser colocado no texto corrido, acima
 ou abaixo da caixa.
 
 ## Posso agrupar várias notas num único widget?
@@ -33,5 +33,7 @@ poderá movê-los e eliminá-los de forma independente.
 
 ## Posso alterar as cores?
 
-Não. As cinco variantes são as cores de estado do design MAN. Uma cor
-própria desvalorizaria a mensagem das outras quatro.
+Não. Cinco das seis variantes correspondem às cores de estado do design da MAN; a
+sexta, «Explicação», é, em vez disso, uma cor de fundo do
+design corporativo da MAN, destinada a notas de fundo discretas sem caráter de estado. Uma
+cor própria desvalorizaria a mensagem das outras.

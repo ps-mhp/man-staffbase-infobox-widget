@@ -1,6 +1,6 @@
 {
   "title": "Riquadro informativo",
-  "summary": "Un riquadro informativo con sfondo colorato, disponibile in cinque varianti, che il lettore può chiudere a scelta.",
+  "summary": "Un riquadro informativo con sfondo colorato, disponibile in sei varianti, che il lettore può chiudere con un clic, se lo desidera.",
   "icon": "📢",
   "pages": [
     {
@@ -31,6 +31,15 @@
         "variant": "info",
         "heading": "Neue Essensausgabe",
         "text": "Die Kantine zieht ab dem 1. Dezember in Halle 4.",
+        "dismissible": "true"
+      }
+    },
+    {
+      "title": "Spiegazione a titolo di informazione di base",
+      "attributes": {
+        "variant": "explanation",
+        "heading": "Was ist eine Betriebsvereinbarung?",
+        "text": "Eine Betriebsvereinbarung regelt verbindlich das Verhältnis zwischen Arbeitgeber und Betriebsrat.",
         "dismissible": "true"
       }
     },

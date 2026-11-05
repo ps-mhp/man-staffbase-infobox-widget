@@ -1,6 +1,6 @@
 {
   "title": "Caixa de informação",
-  "summary": "Uma caixa de nota com fundo colorido, disponível em cinco variantes, que o leitor pode, se quiser, fechar com um clique.",
+  "summary": "Uma caixa de nota com fundo colorido, disponível em seis variantes, que o leitor pode, se quiser, fechar com um clique.",
   "icon": "📢",
   "pages": [
     {
@@ -31,6 +31,15 @@
         "variant": "info",
         "heading": "Neue Essensausgabe",
         "text": "Die Kantine zieht ab dem 1. Dezember in Halle 4.",
+        "dismissible": "true"
+      }
+    },
+    {
+      "title": "Explicação como informação de base",
+      "attributes": {
+        "variant": "explanation",
+        "heading": "Was ist eine Betriebsvereinbarung?",
+        "text": "Eine Betriebsvereinbarung regelt verbindlich das Verhältnis zwischen Arbeitgeber und Betriebsrat.",
         "dismissible": "true"
       }
     },

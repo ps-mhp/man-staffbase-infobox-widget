@@ -18,7 +18,7 @@ corrente.
 
 ## Non vedo il mio riquadro informativo.
 
-In tal caso, sia il titolo che il testo sono vuoti. Almeno uno dei due deve
+Allora sia il titolo che il testo sono vuoti. Almeno uno dei due deve
 essere compilato.
 
 ## Posso inserire un link nel testo?
@@ -33,5 +33,7 @@ potrai spostarli ed eliminarli indipendentemente l’uno dall’altro.
 
 ## Posso cambiare i colori?
 
-No. Le cinque varianti sono i colori di stato del design MAN. Un colore personalizzato
-sminuirebbe il significato degli altri quattro.
+No. Cinque delle sei varianti sono i colori di stato del design MAN; la
+sesta, «Spiegazione», è invece un colore di riempimento tratto dal
+design aziendale MAN, destinato a note di sfondo discrete prive di carattere di stato. Un
+colore personalizzato sminuirebbe il significato degli altri.

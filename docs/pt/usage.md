@@ -22,8 +22,8 @@ Uma quebra de linha no campo de texto aparece também na página. Duas linhas no
 duas linhas na caixa. Por outro lado, vários espaços consecutivos são
 fundidos num único.
 
-A caixa de informação não se destina a parágrafos com espaços entre si — isso é uma
-publicação.
+A caixa de informação não se destina a parágrafos com espaços entre si — isso é um
+artigo.
 
 ## A cruz de fecho
 

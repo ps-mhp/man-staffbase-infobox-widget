@@ -28,10 +28,12 @@ or below the box.
 
 ## Can I stack multiple notes in a single widget?
 
-No, one infobox per widget. Insert two widgets for two notes—that way,
+No, one info box per widget. Insert two widgets for two notes—that way,
 you can also move and delete them independently of one another.
 
 ## Can I change the colors?
 
-No. The five variants are the status colors of the MAN design. A custom
-color would detract from the message conveyed by the other four.
+No. Five of the six variants are the status colors of the MAN design; the
+sixth, “Explanation,” is instead a solid color from the
+MAN corporate design for calm background notes that do not indicate status. A
+custom color would detract from the impact of the others.

@@ -22,7 +22,7 @@ Un'interruzione di riga nel campo di testo viene riportata anche nella pagina. D
 due righe nel riquadro. Diversi spazi consecutivi, invece, vengono
 fusi in uno solo.
 
-L'infobox non è pensata per i paragrafi con spazi tra le righe — quello è un
+L'infobox non è pensata per i paragrafi con spazi tra loro — si tratta di un
 articolo.
 
 ## La croce di chiusura

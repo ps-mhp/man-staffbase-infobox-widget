@@ -1,6 +1,6 @@
 {
   "title": "Encadré d'information",
-  "summary": "Une infobulle sur fond coloré, disponible en cinq versions, que le lecteur peut fermer d'un clic s'il le souhaite.",
+  "summary": "Une infobulle sur fond coloré, disponible en six versions, que le lecteur peut fermer s'il le souhaite.",
   "icon": "📢",
   "pages": [
     {
@@ -31,6 +31,15 @@
         "variant": "info",
         "heading": "Neue Essensausgabe",
         "text": "Die Kantine zieht ab dem 1. Dezember in Halle 4.",
+        "dismissible": "true"
+      }
+    },
+    {
+      "title": "Explication à titre d'information générale",
+      "attributes": {
+        "variant": "explanation",
+        "heading": "Was ist eine Betriebsvereinbarung?",
+        "text": "Eine Betriebsvereinbarung regelt verbindlich das Verhältnis zwischen Arbeitgeber und Betriebsrat.",
         "dismissible": "true"
       }
     },

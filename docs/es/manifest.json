@@ -1,6 +1,6 @@
 {
   "title": "Cuadro informativo",
-  "summary": "Un cuadro de aviso con fondo de color, disponible en cinco variantes, que el lector puede cerrar con un clic si lo desea.",
+  "summary": "Un cuadro de información con fondo de color, disponible en seis variantes, que el lector puede cerrar con un clic si lo desea.",
   "icon": "📢",
   "pages": [
     {
@@ -31,6 +31,15 @@
         "variant": "info",
         "heading": "Neue Essensausgabe",
         "text": "Die Kantine zieht ab dem 1. Dezember in Halle 4.",
+        "dismissible": "true"
+      }
+    },
+    {
+      "title": "Explicación a modo de información de referencia",
+      "attributes": {
+        "variant": "explanation",
+        "heading": "Was ist eine Betriebsvereinbarung?",
+        "text": "Eine Betriebsvereinbarung regelt verbindlich das Verhältnis zwischen Arbeitgeber und Betriebsrat.",
         "dismissible": "true"
       }
     },
