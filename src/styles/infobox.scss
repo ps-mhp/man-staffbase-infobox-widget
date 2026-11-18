@@ -14,22 +14,13 @@
 @use "sass:map";
 @use "@shared/stylings/man-tokens" as *;
 @use "@shared/stylings/man-craft" as *;
+@use "variants" as *;
 
 /* Eine flache Farbflaeche ohne Rand, ohne Schatten, ohne Rundung — dieselbe
  * Form wie der Versionshinweis im Dokumentations-Widget
  * (`docs-app__version-warning`). Die Farbe ist die ganze Aussage; eine Kante
- * daneben waere nur Unruhe. */
-
-/* Die Farbpaare je Variante. `styles.test.ts` prueft, dass hier genau die
- * sechs Namen aus `infobox-variant.ts` stehen und jede ihr Paar traegt. */
-$variants: (
-  "default": ("surface": "grey-300", "ink": "text"),
-  "info": ("surface": "info", "ink": "info-ink"),
-  "explanation": ("surface": "explanation", "ink": "explanation-ink"),
-  "success": ("surface": "success", "ink": "success-ink"),
-  "warning": ("surface": "warning", "ink": "warning-ink"),
-  "error": ("surface": "error-surface", "ink": "error-ink"),
-);
+ * daneben waere nur Unruhe. Die Farbpaare je Variante stehen in
+ * `_variants.scss`. */
 
 .man-infobox {
   display: flex;
