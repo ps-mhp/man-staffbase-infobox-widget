@@ -25,7 +25,7 @@ interface Host {
 }
 
 describe("Anmeldung des Widgets", () => {
-  it("meldet den Baustein mit seinen vier Attributen an", async () => {
+  it("meldet den Baustein mit infobox-config und den vier alten Attributen an", async () => {
     const host = window as unknown as Host;
     host.defineBlock = jest.fn();
 
@@ -42,7 +42,7 @@ describe("Anmeldung des Widgets", () => {
         blockDefinition: expect.objectContaining({
           name: "infobox-widget",
           label: "Infobox",
-          attributes: ["variant", "heading", "text", "dismissible"],
+          attributes: ["infobox-config", "variant", "heading", "text", "dismissible"],
         }),
       }),
     );

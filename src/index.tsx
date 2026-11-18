@@ -21,51 +21,37 @@ import ReactDOM from "react-dom/client";
 
 import { BlockFactory, BlockDefinition, ExternalBlockDefinition, BaseBlock } from "widget-sdk";
 import { startWidget } from "@shared/dev-mode/start-widget";
-import {
-  DISMISSIBLE_ATTRIBUTE,
-  HEADING_ATTRIBUTE,
-  TEXT_ATTRIBUTE,
-  VARIANT_ATTRIBUTE,
-  configurationSchema,
-  readDismissible,
-  uiSchema,
-} from "./configuration-schema";
-import { INFOBOX_WIDGET_TAG, resolveVariant } from "./infobox-variant";
+import { ALL_ATTRIBUTES, configurationSchema, uiSchema } from "./configuration-schema";
+import { resolveInfobox } from "./infobox-config";
+import { INFOBOX_WIDGET_TAG } from "./infobox-variant";
 import { Infobox } from "./infobox";
 import icon from "../resources/infobox-widget.svg";
 import pkg from "../package.json";
 
-/** Die Attribute des Widgets; gespiegelt im Konfigurationsschema. */
-const widgetAttributes: string[] = [
-  VARIANT_ATTRIBUTE,
-  HEADING_ATTRIBUTE,
-  TEXT_ATTRIBUTE,
-  DISMISSIBLE_ATTRIBUTE,
-];
-
-/** Nur Zeichenketten reicht die Darstellung weiter; alles andere gilt als nicht gesetzt. */
-function text(value: unknown): string | undefined {
-  return typeof value === "string" ? value : undefined;
-}
+/**
+ * Die Attribute des Widgets, aus dem Schema genommen: `infobox-config` und
+ * dahinter die vier Felder älterer Fassungen, die weiter gelten, solange
+ * `infobox-config` sie nicht trägt.
+ */
+const widgetAttributes: string[] = ALL_ATTRIBUTES;
 
 const factory: BlockFactory = (BaseBlockClass, _widgetApi) => {
   /**
+   * <infobox-widget infobox-config="b64:…"></infobox-widget>
    * <infobox-widget variant="info" heading="Achtung" text="Die Kantine bleibt zu."></infobox-widget>
    */
   return class InfoboxWidgetBlock extends BaseBlockClass implements BaseBlock {
     private _root: ReactDOM.Root | null = null;
 
     public renderBlock(container: HTMLElement): void {
-      const attrs = this.parseAttributes<Record<string, unknown>>();
+      // Je Schlüssel `infobox-config`, sonst das alte Attribut, sonst die
+      // Vorgabe (`infobox-config.ts`). Ein alter Block ohne `infobox-config`
+      // steht damit genau wie bisher da.
+      const box = resolveInfobox(this.parseAttributes<Record<string, unknown>>());
 
       this._root ??= ReactDOM.createRoot(container);
       this._root.render(
-        <Infobox
-          variant={resolveVariant(attrs[VARIANT_ATTRIBUTE])}
-          heading={text(attrs[HEADING_ATTRIBUTE])}
-          text={text(attrs[TEXT_ATTRIBUTE])}
-          dismissible={readDismissible(attrs[DISMISSIBLE_ATTRIBUTE])}
-        />,
+        <Infobox variant={box.variant} heading={box.heading} text={box.text} dismissible={box.dismissible} />,
       );
     }
 

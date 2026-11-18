@@ -15,8 +15,11 @@ import { JSONSchema7, JSONSchema7Definition } from "json-schema";
 
 import { INFOBOX_VARIANTS } from "./infobox-variant";
 import {
+  ALL_ATTRIBUTES,
   DISMISSIBLE_ATTRIBUTE,
   HEADING_ATTRIBUTE,
+  INFOBOX_CONFIG_ATTRIBUTE,
+  LEGACY_ATTRIBUTES,
   TEXT_ATTRIBUTE,
   VARIANT_ATTRIBUTE,
   configurationSchema,
@@ -25,13 +28,21 @@ import {
 } from "./configuration-schema";
 
 describe("configurationSchema", () => {
-  it("fuehrt genau die vier Attribute des Widgets", () => {
-    expect(Object.keys(configurationSchema.properties ?? {})).toEqual([
+  it("fuehrt das neue Attribut zuerst und die vier alten dahinter", () => {
+    expect(ALL_ATTRIBUTES).toEqual([
+      INFOBOX_CONFIG_ATTRIBUTE,
       VARIANT_ATTRIBUTE,
       HEADING_ATTRIBUTE,
       TEXT_ATTRIBUTE,
       DISMISSIBLE_ATTRIBUTE,
     ]);
+    expect(ALL_ATTRIBUTES.slice(1)).toEqual([...LEGACY_ATTRIBUTES]);
+  });
+
+  // `root_<Attribut>` ist widgetuebergreifend; `config` hat schon das Hotspot-Widget.
+  it("traegt den Namen des Widgets im neuen Attribut", () => {
+    expect(INFOBOX_CONFIG_ATTRIBUTE).toBe("infobox-config");
+    expect((configurationSchema.properties ?? {})[INFOBOX_CONFIG_ATTRIBUTE]).toMatchObject({ type: "string", default: "" });
   });
 
   it("bietet die Varianten in derselben Reihenfolge wie der Code an", () => {
