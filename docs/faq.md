@@ -21,6 +21,12 @@ abhebt.
 Dann sind Überschrift und Text beide leer. Mindestens eines von beiden muss
 gefüllt sein.
 
+## Bei „Variante“ ist keine Pill gewählt.
+
+Dann stammt die Infobox aus einer älteren Fassung, und der Einstellungsdialog
+gibt die bisherige Variante nicht heraus. Sie gilt auf der Seite weiter. Erst
+wenn im Fenster eine Variante gewählt und übernommen wird, gilt die neue.
+
 ## Kann ich im Text einen Link setzen?
 
 Nein. Die Infobox trägt reinen Text. Ein Link gehört in den Fließtext über
