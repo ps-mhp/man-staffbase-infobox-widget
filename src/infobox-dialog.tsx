@@ -26,11 +26,17 @@ import * as React from "react";
 import { Info } from "lucide-react";
 
 import { FieldModalShellOptions, startFieldModalInjector } from "@shared/config-modal";
+import { legacyFieldsFromSchema, readLegacyFields, startHiddenFields } from "@shared/legacy-fields";
 
-import { INFOBOX_CONFIG_ATTRIBUTE, LEGACY_ATTRIBUTES } from "./configuration-schema";
+import { INFOBOX_CONFIG_ATTRIBUTE, LEGACY_ATTRIBUTES, configurationSchema } from "./configuration-schema";
 import { InfoboxConfig, configFromLegacy, readInfoboxConfig, serializeInfoboxConfig } from "./infobox-config";
 import { infoboxChangesStatus, validateInfoboxConfig } from "./infobox-editor-rules";
-import { readLegacyFromDialog, startHiddenFields } from "./legacy-fields";
+
+const LEGACY_FIELDS = legacyFieldsFromSchema(LEGACY_ATTRIBUTES, configurationSchema);
+
+/** Die alten Felder, wie der eigene Dialog sie gerade führt. */
+const readLegacyFromDialog = (root: ParentNode): Record<string, string> =>
+  readLegacyFields(LEGACY_FIELDS, INFOBOX_CONFIG_ATTRIBUTE, root).values as Record<string, string>;
 
 /**
  * Der Editor kommt erst, wenn ein Dialog ihn zeigt: er baut auf

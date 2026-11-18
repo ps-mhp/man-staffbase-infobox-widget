@@ -38,7 +38,7 @@ export const DISMISSIBLE_ATTRIBUTE = "dismissible";
  * Dialog ihre Werte weiter führt: das Fenster „Infobox bearbeiten“ übernimmt
  * sie beim ersten Öffnen, und solange `infobox-config` einen Schlüssel nicht
  * trägt, gilt für die Seite das alte Feld. Zu sehen sind sie im eigenen
- * Dialog nicht mehr (`legacy-fields.ts`).
+ * Dialog nicht mehr (`@shared/legacy-fields`).
  */
 export const LEGACY_ATTRIBUTES = [
   VARIANT_ATTRIBUTE,
