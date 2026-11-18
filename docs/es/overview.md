@@ -1,6 +1,6 @@
 # Resumen
 
-El cuadro informativo es un recuadro con fondo de color destinado a una breve nota: una
+El cuadro informativo es un recuadro con fondo de color que contiene una breve nota: una
 línea en negrita, seguida de una frase. El color del recuadro indica al lector el
 grado de urgencia del asunto.
 

@@ -16,24 +16,30 @@ White would be indistinguishable from the page background, and the box
 deliberately has no border. The area itself is the only thing that sets it apart
 from the body text.
 
-## I don’t see my info box.
+## I don’t see my infobox.
 
 That means both the heading and the text are empty. At least one of them must
 be filled in.
 
+## No option is selected under “Variant.”
+
+That means the infobox comes from an older version, and the settings dialog
+does not display the previous variant. It continues to apply on the page. Only
+once a variant is selected and applied in the window will the new one take effect.
+
 ## Can I include a link in the text?
 
-No. The info box contains plain text only. A link belongs in the body text above
+No. The infobox contains plain text only. A link belongs in the body text above
 or below the box.
 
 ## Can I stack multiple notes in a single widget?
 
-No, one info box per widget. Insert two widgets for two notes—that way,
-you can also move and delete them independently of one another.
+No, one infobox per widget. Insert two widgets for two notes—this way,
+they can also be moved and deleted independently of one another.
 
 ## Can I change the colors?
 
 No. Five of the six variants are the status colors of the MAN design; the
 sixth, “Explanation,” is instead a solid color from the
-MAN corporate design for calm background notes that do not indicate status. A
+MAN corporate design for subtle background notes that do not indicate status. A
 custom color would detract from the impact of the others.

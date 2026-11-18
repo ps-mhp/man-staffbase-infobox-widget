@@ -13,7 +13,7 @@ C’est pourquoi le navigateur ne mémorise rien ici.
 ## Pourquoi « Neutre » est-il gris et non blanc ?
 
 En blanc, il serait impossible de le distinguer de l’arrière-plan de la page, et l’encadré n’a
-délibérément pas de bordure. Sa surface est la seule chose qui le distingue du corps du texte
+délibérément pas de bordure. La surface est la seule chose qui le distingue du corps du texte
 .
 
 ## Je ne vois pas mon encadré d’information.
@@ -21,9 +21,15 @@ délibérément pas de bordure. Sa surface est la seule chose qui le distingue d
 Cela signifie que le titre et le texte sont tous deux vides. Au moins l’un des deux doit
 être renseigné.
 
+## Aucune option n’est sélectionnée sous « Variante ».
+
+Cela signifie que l’encadré provient d’une ancienne version, et que la boîte de dialogue des paramètres
+ne propose pas la variante précédente. Celle-ci reste d’application sur la page. Ce n’est
+qu’une fois qu’une variante a été sélectionnée et validée dans la fenêtre que la nouvelle s’applique.
+
 ## Puis-je insérer un lien dans le texte ?
 
-Non. L’encadré d’information ne contient que du texte brut. Un lien doit être placé dans le corps du texte, au-dessus
+Non. L’infobox ne contient que du texte brut. Un lien doit être placé dans le corps du texte, au-dessus
 ou en dessous de l’encadré.
 
 ## Puis-je regrouper plusieurs remarques dans un même widget ?

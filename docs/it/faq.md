@@ -18,20 +18,26 @@ corrente.
 
 ## Non vedo il mio riquadro informativo.
 
-Allora sia il titolo che il testo sono vuoti. Almeno uno dei due deve
+Allora sia il titolo che il testo sono entrambi vuoti. Almeno uno dei due deve
 essere compilato.
+
+## In «Variante» non è selezionata alcuna opzione.
+
+Allora l’infobox proviene da una versione precedente e la finestra di dialogo delle impostazioni
+non mostra la variante precedente. Questa continua ad essere valida sulla pagina. Solo
+quando nella finestra viene selezionata e confermata una variante, si applica quella nuova.
 
 ## Posso inserire un link nel testo?
 
-No. Il riquadro informativo contiene solo testo. Un link va inserito nel corpo del testo sopra
+No. L’infobox contiene solo testo. Un link va inserito nel corpo del testo sopra
 o sotto il riquadro.
 
 ## Posso raggruppare più note in un unico widget?
 
-No, un’infobox per widget. Per due note, inserisci due widget: in questo modo
-potrai spostarli ed eliminarli indipendentemente l’uno dall’altro.
+No, una sola infobox per widget. Per due note, inserire due widget: in questo modo
+è possibile spostarli ed eliminarli indipendentemente l’uno dall’altro.
 
-## Posso cambiare i colori?
+## Posso modificare i colori?
 
 No. Cinque delle sei varianti sono i colori di stato del design MAN; la
 sesta, «Spiegazione», è invece un colore di riempimento tratto dal

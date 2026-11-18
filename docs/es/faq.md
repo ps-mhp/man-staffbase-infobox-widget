@@ -21,14 +21,20 @@ corriente.
 Entonces tanto el título como el texto están vacíos. Al menos uno de los dos debe
 estar rellenado.
 
+## En «Variante» no hay ninguna opción seleccionada.
+
+Entonces el cuadro informativo procede de una versión anterior, y el cuadro de diálogo de configuración
+no muestra la variante anterior. Esta sigue vigente en la página. Solo
+cuando se seleccione una variante en la ventana y se aplique, se aplicará la nueva.
+
 ## ¿Puedo insertar un enlace en el texto?
 
-No. El cuadro informativo solo contiene texto sin formato. Un enlace debe colocarse en el texto corriente,
-por encima o por debajo del cuadro.
+No. El cuadro informativo contiene solo texto. Un enlace debe ir en el cuerpo del texto, encima
+o debajo del cuadro.
 
 ## ¿Puedo agrupar varias notas en un mismo widget?
 
-No, solo un cuadro de información por widget. Para dos notas, inserta dos widgets; así
+No, solo una infobox por widget. Para dos notas, inserta dos widgets; así
 también se pueden mover y eliminar de forma independiente.
 
 ## ¿Puedo cambiar los colores?

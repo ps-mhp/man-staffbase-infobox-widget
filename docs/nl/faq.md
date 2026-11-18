@@ -12,7 +12,7 @@ verschijnt. Daarom onthoudt de browser hier niets.
 
 ## Waarom is „Neutraal“ grijs en niet wit?
 
-Wit zou niet te onderscheiden zijn van de achtergrond van de pagina, en het vakje heeft
+Wit zou niet te onderscheiden zijn van de achtergrond van de pagina, en het kader heeft
 bewust geen rand. Het oppervlak is het enige dat het onderscheidt van de lopende tekst
 .
 
@@ -21,19 +21,25 @@ bewust geen rand. Het oppervlak is het enige dat het onderscheidt van de lopende
 Dan zijn zowel de kop als de tekst leeg. Ten minste één van beide moet
 ingevuld zijn.
 
+## Bij „Variant“ is geen pil geselecteerd.
+
+Dan is de infobox afkomstig uit een oudere versie, en het instellingenvenster
+geeft de huidige variant niet weer. Deze blijft op de pagina van kracht. Pas
+wanneer in het venster een variant is geselecteerd en toegepast, geldt de nieuwe.
+
 ## Kan ik een link in de tekst plaatsen?
 
 Nee. De infobox bevat alleen tekst. Een link hoort in de lopende tekst boven
 of onder het kader.
 
-## Kan ik meerdere mededelingen in één widget stapelen?
+## Kan ik meerdere opmerkingen in één widget stapelen?
 
-Nee, één infobox per widget. Voeg voor twee mededelingen twee widgets in — zo
+Nee, één infobox per widget. Voeg voor twee opmerkingen twee widgets in — zo
 kunnen ze ook onafhankelijk van elkaar worden verplaatst en verwijderd.
 
 ## Kan ik de kleuren wijzigen?
 
 Nee. Vijf van de zes varianten zijn de statuskleuren van het MAN-ontwerp; de
-zesde, ‘Toelichting’, is daarentegen een vlakvulkleur uit het
-MAN-huisstijlontwerp voor rustige achtergrondvermeldingen zonder statuskarakter. Een
-eigen kleur zou de boodschap van de andere vermeldingen ondermijnen.
+zesde, ‘Toelichting’, is in plaats daarvan een vlakke kleur uit het
+MAN-huisstijlontwerp voor rustige achtergrondopmerkingen zonder statuskarakter. Een
+eigen kleur zou de boodschap van de andere kleuren ondermijnen.

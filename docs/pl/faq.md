@@ -7,24 +7,30 @@ okienko znów się pojawi.
 
 Trwałe ukrycie wymagałoby identyfikatora, dzięki któremu przeglądarka
 zapamiętałaby poszczególne okienka. Identyfikator wygenerowany z tekstu uległby uszkodzeniu przy każdej poprawce —
-nawet poprawiona literówka spowodowałaby ponowne pojawienie się okienka
-u wszystkich użytkowników. Dlatego przeglądarka niczego tutaj nie zapamiętuje.
+nawet poprawiona literówka spowodowałaby ponowne
+pojawienie się okienka u wszystkich użytkowników. Dlatego przeglądarka niczego tutaj nie zapamiętuje.
 
 ## Dlaczego opcja „Neutralny” jest szara, a nie biała?
 
-Biały kolor byłby nie do odróżnienia od tła strony, a ramka
-celowo nie ma obramowania. Jej powierzchnia jest jedyną rzeczą, która odróżnia ją od
-tekstu bieżącego.
+Biały kolor byłby nie do odróżnienia od tła strony, a ramka celowo nie ma
+obramowania. Jedyną rzeczą, która odróżnia ją od tekstu bieżącego,
+jest jej powierzchnia.
 
-## Nie widzę mojego pola informacyjnego.
+## Nie widzę mojej ramki informacyjnej.
 
 Oznacza to, że zarówno nagłówek, jak i tekst są puste. Przynajmniej jedno z nich musi
 być wypełnione.
 
+## W polu „Wariant” nie jest zaznaczona żadna opcja.
+
+Oznacza to, że ramka informacyjna pochodzi ze starszej wersji, a okno dialogowe ustawień
+nie wyświetla dotychczasowego wariantu. Nadal obowiązuje on na stronie. Dopiero
+gdy w oknie zostanie wybrany i zatwierdzony wariant, zacznie obowiązywać nowy.
+
 ## Czy mogę umieścić link w tekście?
 
-Nie. Pole informacyjne zawiera wyłącznie tekst. Link należy umieścić w tekście ciągłym powyżej
-lub poniżej pola.
+Nie. Ramka informacyjna zawiera wyłącznie tekst. Link należy umieścić w tekście głównym powyżej
+lub poniżej ramki.
 
 ## Czy mogę umieścić kilka informacji w jednym widżecie?
 
@@ -35,5 +41,5 @@ można je również niezależnie od siebie przesuwać i usuwać.
 
 Nie. Pięć z sześciu wariantów to kolory statusowe zgodne z identyfikacją wizualną MAN;
 szósty, „Wyjaśnienie”, jest natomiast kolorem tła pochodzącym z
-identyfikacji wizualnej MAN, przeznaczonym do spokojnych informacji w tle, które nie mają charakteru statusowego.
-Własny kolor osłabiłby przekaz pozostałych elementów.
+identyfikacji wizualnej MAN, przeznaczonym do spokojnych informacji w tle bez charakteru statusowego.
+Własny kolor osłabiłby przekaz pozostałych.
