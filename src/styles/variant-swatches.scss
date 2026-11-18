@@ -1,0 +1,26 @@
+/*!
+ * Copyright 2026, MHP Management und IT-Beratung GmbH and contributors.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use "sass:map";
+@use "@shared/stylings/man-tokens" as *;
+@use "variants" as *;
+
+/* Die Farbtupfer in den Pills „Variante“ des Fensters „Infobox bearbeiten“:
+ * je Variante die Fläche, die der Kasten auf der Seite trägt – aus denselben
+ * Tokens (`_variants.scss`). Form, Größe und Kante setzt der Editor über
+ * Tailwind; hier steht nur die Farbe. */
+@each $name, $colors in $variants {
+  .infobox-swatch--#{$name} {
+    background: man(map.get($colors, "surface"));
+  }
+}
