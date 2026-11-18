@@ -22,9 +22,9 @@
  */
 
 import * as React from "react";
-import { TriangleAlert } from "lucide-react";
 import { Field } from "@man/config-ui/form/field";
 import { FormSection } from "@man/config-ui/form/form-section";
+import { IssueText } from "@man/config-ui/form/issue-text";
 import type { IconComponent, SegmentedOption } from "@man/config-ui/form/segmented";
 import { SegmentedField } from "@man/config-ui/form/segmented-field";
 import { SwitchRow } from "@man/config-ui/form/switch-row";
@@ -94,16 +94,6 @@ export interface InfoboxFormProps {
 function useIssue(value: InfoboxConfig, id: string): boolean {
   const { issuesVisible } = useConfigShell();
   return issuesVisible && validateInfoboxConfig(value).some((issue) => issue.id === id);
-}
-
-/** Eine Meldung wie die von `Field`: Symbol und Text, vorgelesen, sobald sie erscheint. */
-function IssueText({ id, children }: { id: string; children: React.ReactNode }): React.ReactElement {
-  return (
-    <p id={id} role="alert" className="flex items-start gap-1.5 text-[13px] text-destructive">
-      <TriangleAlert className="mt-0.5 size-3.5 shrink-0" aria-hidden />
-      <span>{children}</span>
-    </p>
-  );
 }
 
 /**
