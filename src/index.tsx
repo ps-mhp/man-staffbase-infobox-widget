@@ -23,6 +23,7 @@ import { BlockFactory, BlockDefinition, ExternalBlockDefinition, BaseBlock } fro
 import { startWidget } from "@shared/dev-mode/start-widget";
 import { ALL_ATTRIBUTES, configurationSchema, uiSchema } from "./configuration-schema";
 import { resolveInfobox } from "./infobox-config";
+import { startInfoboxDialog } from "./infobox-dialog";
 import { INFOBOX_WIDGET_TAG } from "./infobox-variant";
 import { Infobox } from "./infobox";
 import icon from "../resources/infobox-widget.svg";
@@ -98,12 +99,19 @@ const externalBlockDefinition: ExternalBlockDefinition = {
  *
  * Die Abfrage davor laesst das Modul in Jest laden, wo es keine Wirtsseite
  * gibt: ohne sie braeche schon der blosse Import der Datei jeden Test.
+ *
+ * Das Fenster „Infobox bearbeiten“ haengt am Anmelden, nicht am Laden: auf
+ * Modulebene gestartet, belegte das installierte Buendel das Feld
+ * `infobox-config`, bevor feststeht, ob ein lokaler Entwicklungsserver
+ * uebernimmt – dann kaeme die Ansicht von dort, das Fenster aber aus der
+ * veroeffentlichten Fassung (im Hero-Slider-Widget so beobachtet).
  */
 if (typeof window.defineBlock === "function") {
   void startWidget({
     name: INFOBOX_WIDGET_TAG,
     version: pkg.version,
     register: () => {
+      startInfoboxDialog();
       window.defineBlock(externalBlockDefinition);
     },
   });

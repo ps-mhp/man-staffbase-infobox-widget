@@ -17,25 +17,33 @@
 export {};
 
 const mockStartWidget = jest.fn().mockResolvedValue(undefined);
+const mockStartInfoboxDialog = jest.fn(() => () => undefined);
 
 jest.mock("@shared/dev-mode/start-widget", () => ({ startWidget: mockStartWidget }));
+jest.mock("./infobox-dialog", () => ({ startInfoboxDialog: mockStartInfoboxDialog }));
 
 interface Host {
   defineBlock: jest.Mock;
 }
 
 describe("Anmeldung des Widgets", () => {
-  it("meldet den Baustein mit infobox-config und den vier alten Attributen an", async () => {
+  it("startet das Fenster erst beim Anmelden und meldet infobox-config mit den vier alten Attributen an", async () => {
     const host = window as unknown as Host;
     host.defineBlock = jest.fn();
 
     jest.resetModules();
     await import("./index");
 
+    // Beim blossen Laden noch nicht: erst muss feststehen, ob ein lokaler
+    // Entwicklungsserver uebernimmt.
+    expect(mockStartInfoboxDialog).not.toHaveBeenCalled();
+
     const options = mockStartWidget.mock.calls[0][0] as { name: string; register: () => void };
     expect(options.name).toBe("infobox-widget");
 
     options.register();
+
+    expect(mockStartInfoboxDialog).toHaveBeenCalledTimes(1);
 
     expect(host.defineBlock).toHaveBeenCalledWith(
       expect.objectContaining({
