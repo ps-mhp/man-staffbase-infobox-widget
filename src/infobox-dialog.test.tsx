@@ -24,10 +24,12 @@ import { act, fireEvent, render } from "@testing-library/react";
 import Form from "@rjsf/mui";
 import validator from "@rjsf/validator-ajv8";
 
-import { modalRoot, settleModal } from "@shared/ui/config-modal.testing";
+import { modalRoot, settleModal, settleEditor, clickElement } from "@shared/ui/config-modal.testing";
 import { configurationSchema } from "./configuration-schema";
 import { readInfoboxConfig, resolveInfobox, serializeInfoboxConfig } from "./infobox-config";
 import { infoboxEditorShell, startInfoboxDialog } from "./infobox-dialog";
+
+const EDITOR_SELECTOR = '[data-testid="infobox-editor"]';
 
 const mockEditorLoaded = jest.fn();
 jest.mock("./infobox-editor", () => {
@@ -44,21 +46,6 @@ const buttonNamed = (name: string): HTMLElement | null =>
   Array.from(modalRoot()?.querySelectorAll<HTMLElement>('button, [role="radio"], [role="switch"]') ?? []).find(
     (button) => button.textContent?.trim() === name || button.getAttribute("aria-label") === name,
   ) ?? null;
-
-/** Ein Klick wie von Hilfsmitteln: react-aria nimmt ihn als Druck an. */
-async function click(element: Element | null): Promise<void> {
-  if (element === null) throw new Error("Nichts zum Klicken gefunden");
-  await act(async () => {
-    (element as HTMLElement).click();
-  });
-}
-
-/** Das Modal lädt nach, der Editor darin noch einmal: so oft warten, bis er da ist. */
-async function settleEditor(): Promise<void> {
-  for (let round = 0; round < 8 && inModal('[data-testid="infobox-editor"]') === null; round += 1) {
-    await settleModal();
-  }
-}
 
 /** Der eigene Dialog neben einem fremden mit gleichen Feldnamen (`text`, `heading`). */
 function Dialogs({ formData }: { formData: Record<string, unknown> }): React.ReactElement {
@@ -87,7 +74,7 @@ async function open(formData: Record<string, unknown>): Promise<{ container: HTM
   await act(async () => {
     stop = startInfoboxDialog(container);
   });
-  await settleEditor();
+  await settleEditor(EDITOR_SELECTOR);
   return { container, stop };
 }
 
@@ -161,7 +148,7 @@ describe("startInfoboxDialog", () => {
       fireEvent.change(text, { target: { value: "Am Sonntag auch." } });
     });
     expect(inModal('[role="status"]')).toHaveTextContent("Text geändert");
-    await click(inModal('[data-testid="config-shell-apply"]'));
+    await clickElement(inModal('[data-testid="config-shell-apply"]'));
 
     const raw = fieldValue(container);
     expect(readInfoboxConfig(raw)).toEqual({
@@ -201,7 +188,7 @@ describe("startInfoboxDialog", () => {
     await act(async () => {
       fireEvent.change(heading, { target: { value: "" } });
     });
-    await click(inModal('[data-testid="config-shell-apply"]'));
+    await clickElement(inModal('[data-testid="config-shell-apply"]'));
 
     expect(fieldValue(container)).toBe("");
     expect(inModal('[role="status"]')).toHaveTextContent("Überschrift oder Text angeben");
@@ -214,7 +201,7 @@ describe("startInfoboxDialog", () => {
   it("zeigt in der Vorschau den Entwurf als echte Infobox", async () => {
     const { stop } = await open(OLD_BLOCK);
 
-    await click(buttonNamed("Desktop"));
+    await clickElement(buttonNamed("Desktop"));
     await settleModal();
 
     const preview = inModal('[data-testid="infobox-preview"]');
